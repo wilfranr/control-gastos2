@@ -8,7 +8,7 @@ import Filtros from './components/Filtros'
 
 function App() {
 
-  const [gastos, setGastos] = useState(
+  const [gastos, setGastos] = useState(//si hay gastos en el local storage, los traemos, sino, un array vacio
     localStorage.getItem('gastos') ? JSON.parse(localStorage.getItem('gastos')) : []
   )
   const [presupuesto, setPresupuesto] = useState(
@@ -92,6 +92,7 @@ function App() {
     <div className={modal ? 'fijar' : ''}>
       <Header
         gastos={gastos}
+        setGastos={setGastos}
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
         isValidPresupuesto={isValidPresupuesto}
